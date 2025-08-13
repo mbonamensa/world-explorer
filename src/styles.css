@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 0.9rem;
+}
+
+#canvas-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.countryName {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.6rem;
+    color: white;
+}
+
+.light-text {
+    color: #637887;
+}
+
+.country-wrapper {
+    position: absolute;
+    color: #121417;
+    z-index: 10;
+    background-color: white;
+    font-family: Inter;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-detail-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #121417;
+}
+
+.country {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+}
+
+.cap-and-code {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+    border-bottom: 1px solid lightgrey;
+}
+
+.population-wrapper {
+    margin: 2rem 0;
+}
+
+.language-wrapper {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.language {
+    padding: 0.3rem 1.5rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+    background-color: lightgrey;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 3rem;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100;
+    left: 100;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hovered {
+    cursor: pointer;
+}
