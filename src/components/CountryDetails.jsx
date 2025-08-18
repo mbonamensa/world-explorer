@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5"
 
 export default function CountryDetails() {
 
-    const data = useStore.getState().countryData
+    const data = useStore(state => state.countryData) 
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -15,7 +15,7 @@ export default function CountryDetails() {
     }
 
     return (
-    data.map(data => {
+    data && data.map(data => {
 
         const {
             name,
