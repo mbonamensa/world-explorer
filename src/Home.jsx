@@ -41,6 +41,8 @@ export default function Home() {
                         )
                     }
                 </Canvas>
+            </div>
+            <div className="outlet-wrapper">
                 <Outlet />
             </div>
         </>

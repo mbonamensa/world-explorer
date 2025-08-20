@@ -39,19 +39,15 @@
 }
 
 .country-wrapper {
-    position: absolute;
     color: #121417;
     z-index: 10;
     background-color: white;
     font-family: Inter;
     width: 100%;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 20px;
     padding: 2rem;
     border-radius: 0.8rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .close-detail-modal {
@@ -127,4 +123,16 @@
     color: white;
     font-size: 1.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.outlet-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
