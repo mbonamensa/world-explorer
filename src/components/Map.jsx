@@ -16,7 +16,6 @@ export default function Map({lat, lng, zoom = 4}) {
 
     const mapRef = useRef(null)
 
-
     if (!isLoaded) return <div>Loading...</div>
     return (
 
