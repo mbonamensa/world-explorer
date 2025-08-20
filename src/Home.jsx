@@ -10,8 +10,6 @@ import { Html } from '@react-three/drei'
 export default function Home() {
 
     const data = useStore(state => state.countryData)   
-
-    console.log("Country data loaded:", data)
     
     const populationDotElements = data && data.map(item => {
 

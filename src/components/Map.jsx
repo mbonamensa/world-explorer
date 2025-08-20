@@ -1,10 +1,5 @@
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api"
-import { useEffect, useRef } from "react"
-
-// libraries to load with GMap API
-// moved outside of the component to avoid reloading on every render
-// this is necessary for the AdvancedMarkerElement to work
-const libraries= ["marker"]
+import { useRef } from "react"
 
 export default function Map({lat, lng, zoom = 4}) {
 
@@ -17,23 +12,9 @@ export default function Map({lat, lng, zoom = 4}) {
     // loads the GMap javascript software dev kit using api key
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: apikey,
-        libraries
     })
 
-    const marpRef = useRef(null)
-
-    useEffect(() => {
-        if (isLoaded && marpRef.current) {
-            (async () => {
-                const { AdvancedMarkerElement} = await google.maps.importLibrary("marker")
-                new AdvancedMarkerElement({
-                    map: marpRef.current,
-                    position: center,
-                    title: "Country Center",
-                })
-            })
-        }
-    }, [isLoaded, center])
+    const mapRef = useRef(null)
 
 
     if (!isLoaded) return <div>Loading...</div>
@@ -43,8 +24,14 @@ export default function Map({lat, lng, zoom = 4}) {
             center={center}
             zoom={zoom}
             mapContainerClassName="map-container"
-            onLoad={(map) => (marpRef.current = map)}
-        />
+            onLoad={(map) => (mapRef.current = map)}
+        >
+            <Marker
+                position={center}
+            />
+        </GoogleMap>
 
     )
 }
+
+
