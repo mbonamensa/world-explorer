@@ -48,6 +48,7 @@
     margin: 20px;
     padding: 2rem;
     border-radius: 0.8rem;
+    position: relative;
 }
 
 .close-detail-modal {
