@@ -27,7 +27,7 @@ export default function Home() {
         <>
             <div id="canvas-wrapper">
                 <Canvas camera={{position: [0, 0, 3]}}>
-                    <OrbitControls onChange={ useStore.setState({setHasUserInteracted: true})}/>
+                    <OrbitControls onChange={() => useStore.setState({setHasUserInteracted: true})}/>
                     {!data ? 
                         (
                             <Html>
@@ -42,9 +42,7 @@ export default function Home() {
                     }
                 </Canvas>
             </div>
-            <div className="outlet-wrapper">
-                <Outlet />
-            </div>
+            <Outlet />
         </>
     )
 }
